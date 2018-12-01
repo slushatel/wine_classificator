@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
 
 class Vizualizer:
@@ -77,4 +78,13 @@ class Vizualizer:
         # fig.suptitle("Alcohol - Volatile Acidity")
         fig.subplots_adjust(top=0.85, wspace=0.7)
 
+        plt.show()
+
+    def plot_corelation_matrix(self, wines):
+        corr = wines.corr()
+        sns.heatmap(corr,
+                    xticklabels=corr.columns.values,
+                    yticklabels=corr.columns.values)
+        sns.set()
+        # TODO use seaborn's palette
         plt.show()
