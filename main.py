@@ -78,9 +78,5 @@ train.Trainer().calc_additional(y_test, y_pred.round())
 
 ###########################################
 
-x_q, y_q = train_quality.TrainerQuality().split_to_train_test_sets(wines)
-model = train_quality.TrainerQuality().train(x_q, y_q)
-mse_value, mae_value = model.evaluate(x_q[test], y_q[test], verbose=0)
-print(mse_value)
-print(mae_value)
-r2_score(Y[test], y_pred)
+x_q, y_q = train_quality.TrainQuality().split_to_train_test_sets(wines)
+train_quality.TrainQuality().train(x_q, y_q)
